@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nodarbibas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Interešu izglītība</a></li>
+                <li><a href="#">Darbs</a></li>
+                <li><a href="#">Nometnes</a></li>
+            </ul>
+        </nav>
+        <a href="index.html" class="home-button">
+            <img src="home-icon.png" alt="Home" class="home-icon">
+        </a>
+    </header>
+
+    <div class="selection-container">
+        <h2>Izvēlies vecuma kategoriju</h2>
+        <div class="button-item top-choice">zem 15</div>
+        <div class="button-item top-choice">15-18</div>
+        <div class="button-item top-choice">18-22</div>
+        <div class="button-item top-choice">22-25</div>
+    </div>
+
+    <div class="selection-container">
+        <h2>Izvēlies pilsētu</h2>
+        <div class="button-item bottom-choice">Valmiera</div>
+        <div class="button-item bottom-choice">Sigulda</div>
+        <div class="button-item bottom-choice">Cēsis</div>
+        <div class="button-item bottom-choice">Smiltene</div>
+        <div class="button-item bottom-choice">Ainaži</div>
+        <div class="button-item bottom-choice">Rīga</div>
+    </div>
+
+    <div class="continue-section">
+        <a href="third-page.html" class="continue-text">Turpināt <span class="arrow">&rarr;</span></a>
+    </div>
+
+    <section class="bottom-space"></section>
+
+    <script>
+        document.querySelectorAll('.top-choice').forEach(button => {
+            button.addEventListener('click', function () {
+                document.querySelectorAll('.top-choice').forEach(btn => btn.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        document.querySelectorAll('.bottom-choice').forEach(button => {
+            button.addEventListener('click', function () {
+                document.querySelectorAll('.bottom-choice').forEach(btn => btn.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        document.querySelector('.continue-text').addEventListener('click', function () {
+            this.classList.toggle('selected');
+        });
+    </script>
+</body>
+</html>
